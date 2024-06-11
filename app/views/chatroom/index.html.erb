@@ -15,14 +15,19 @@
                 </div>
             </div>
             <div class="extra content">
-                <form class="ui reply form">
+
+                <%= form_with model: @message,class:"ui reply form",role:"form",local: true do |f| %>
+                
                     <div class="field">
                         <div class="ui fluid icon input">
-                            <input type="text" placeholder="Enter Message">
-                            <i class="bordered purple icon edit"></i>
+                            <%= f.text_field :body, placeholder:"Enter Message"%>
+                             <%= f.button '<i class="bordered purple icon edit"></i>'.html_safe%>
+                            
                         </div>
                     </div>
-                </form>
+                
+                <% end %>
+
             </div>
         </div>
     </div>

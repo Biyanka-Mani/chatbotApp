@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+    before_action :logged_in_redirect,only:[:new,:create]
     def new
     end
     def create
@@ -8,8 +9,9 @@ class SessionsController < ApplicationController
             flash[:success]="Login Successfully!"
             redirect_to root_path
         else
-            flash.now[:error]="Login Failed!"
-            render :new,status: :unprocessable_entity
+            flash[:error]="Login Failed!"
+           
+            redirect_to login_path
         end
     end
 
@@ -18,4 +20,13 @@ class SessionsController < ApplicationController
         flash[:success]="Logout Successfully!"
         redirect_to login_path
     end
+
+    private
+    def logged_in_redirect
+        if logged_in?
+            flash[:error]="You are already Logged In"
+            redirect_to root_path
+        end
+    end
+
 end
