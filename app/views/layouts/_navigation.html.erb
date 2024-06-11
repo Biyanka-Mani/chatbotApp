@@ -2,9 +2,7 @@
 
 
     <div class="ui inverted secondary pointing menu"> 
-            <a class="active item">
-                ChatRoom
-            </a>
+             <%= link_to 'ChatRoom',root_path,class:"item"%>
                 <a class="item">
                 Messages
             </a>
@@ -15,7 +13,7 @@
             Account <i class="dropdown icon"></i>
             <div class="menu">
                 <a class="item">Logout</a>
-                <a class="item">Login</a>
+                <%= link_to 'Login',login_path,class:"item"%>
                 <a class="item">SignUp</a>
             </div>
             </div>
@@ -23,6 +21,6 @@
                 <div class="ui primary button">Sign Up</div>
             </div>
         </div>
-   
+   </div>
  
 </div>
