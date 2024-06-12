@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   resources :messages
+  mount ActionCable.server,at: '/cable'
   # Defines the root path route ("/")
   # root "posts#index"
 end

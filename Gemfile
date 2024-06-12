@@ -27,6 +27,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 gem "semantic-ui-sass"
+gem 'redis', '~> 4.0'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
@@ -36,7 +37,7 @@ gem "semantic-ui-sass"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
  gem "bcrypt", "~> 3.1.7"
- 
+
  gem "hirb"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
